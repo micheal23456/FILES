@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title><% title = 'Login' %></title>
+    <link rel="stylesheet" href="/stylesheets/login.css">
+
+</head>
+<body>
+
+  <div class="login">
+    <form action="/login" method="post" novalidate>
+      <h1>Login</h1>
+
+      <label for="email">Email</label>
+      <input type="text" id="email" name="email" autocomplete="username" required />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" autocomplete="current-password" required />
+
+      <input type="submit" value="Submit" />
+
+      <p>Don't have an account? <a href="/signup">Signup</a></p>
+    </form>
+
+    <% if (errors && errors.length > 0) { %>
+      <div class="error-messages">
+        <ul>
+          <% errors.forEach(function(error) { %>
+            <li><%= error.msg %></li>
+          <% }); %>
+        </ul>
+      </div>
+    <% } %>
+
+    <% if (message) { %>
+      <div class="error-messages">
+        <ul>
+          <li><%= message %></li>
+        </ul>
+      </div>
+    <% } %>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,352 @@
+/* Dark theme background and base text color */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(-45deg, #121212, #1e1e1e, #121212, #1e1e1e);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  color: #e0e0e0;
+  overflow-x: hidden;
+}
+
+@keyframes gradientBG {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+/* Header water drop bouncing animation with glowing aqua */
+.waterzone h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  animation: bounceDrop 2s ease-in-out infinite;
+  user-select: none;
+  cursor: default;
+  color: #00e5ff;
+  text-shadow: 0 0 15px #00e5ff, 0 0 30px #00bcd4;
+}
+
+@keyframes bounceDrop {
+  0%, 100% {
+    transform: translateY(0);
+    text-shadow: 0 0 10px #00e5ff, 0 0 20px #00e5ff;
+  }
+  50% {
+    transform: translateY(-15px);
+    text-shadow: 0 0 30px #00ffff, 0 0 40px #00ffff;
+  }
+}
+
+/* Navigation bar with dark semi-transparent background */
+nav {
+  background: rgba(20, 20, 20, 0.85);
+  padding: 10px 0;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+/* Navigation menu styling with glowing hover effect */
+.nav-links {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 1.5rem;
+}
+
+.nav-links li a, .logout-btn {
+  text-decoration: none;
+  color: #a0eaff;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  background: rgba(40, 40, 40, 0.6);
+  box-shadow: 0 0 5px #00bcd4;
+  border: 2px solid transparent;
+  user-select: none;
+  cursor: pointer;
+}
+
+.nav-links li a:hover, .logout-btn:hover {
+  background: #00bcd4;
+  color: #0a1c24;
+  box-shadow: 0 0 20px #00e5ff, 0 0 30px #00e5ff;
+  border-color: #00e5ff;
+  transform: scale(1.1);
+}
+
+/* Main content area with dark translucent panel */
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  background: rgba(25, 25, 25, 0.8);
+  padding: 2rem 3rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 255, 255, 0.3);
+  animation: slideFadeIn 2s ease forwards;
+  opacity: 0;
+  color: #d0f0ff;
+}
+
+@keyframes slideFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+}
+
+main h1 {
+  font-size: 2.75rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #00e5ff;
+  text-shadow: 0 0 10px #00bcd4;
+  user-select: none;
+}
+
+/* Paragraph text glow pulse */
+main p {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: #a8dfff;
+  text-align: center;
+  animation: pulseText 3s ease-in-out infinite;
+  margin-bottom: 2rem;
+  user-select: text;
+}
+
+@keyframes pulseText {
+  0%, 100% {
+    text-shadow: 0 0 10px #00e5ff;
+  }
+  50% {
+    text-shadow: 0 0 20px #00ffff;
+    color: #a0f0ff;
+  }
+}
+
+/* Sections with floating card effect and dark backgrounds */
+section.featured, section.about {
+  background: rgba(18, 18, 18, 0.85);
+  border-radius: 15px;
+  padding: 1.5rem 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 30px rgba(0, 90, 120, 0.7);
+  animation: floatUpDown 6s ease-in-out infinite;
+}
+
+@keyframes floatUpDown {
+  0%, 100% {
+    transform: translateY(0);
+    box-shadow: 0 8px 30px rgba(0,90,120,0.7);
+  }
+  50% {
+    transform: translateY(-15px);
+    box-shadow: 0 15px 40px rgba(0,255,255,0.6);
+  }
+}
+
+section h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #00bcd4;
+  margin-bottom: 1rem;
+  letter-spacing: 1.2px;
+  user-select: none;
+}
+
+/* Feature list items with slide-in animation */
+.feature-list li {
+  margin: 1rem 0;
+  border-left: 4px solid #00e5ff;
+  padding-left: 15px;
+  animation: slideInLeft 1s ease forwards;
+  opacity: 0;
+  user-select: text;
+}
+
+.feature-list li:nth-child(1) {
+  animation-delay: 0.3s;
+}
+.feature-list li:nth-child(2) {
+  animation-delay: 0.6s;
+}
+.feature-list li:nth-child(3) {
+  animation-delay: 0.9s;
+}
+
+@keyframes slideInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+}
+
+.feature-list h3 {
+  margin-bottom: 0.3rem;
+  color: #00e5ff;
+  text-shadow: 0 0 15px #00bcd4;
+  font-size: 1.25rem;
+  user-select: none;
+}
+
+.feature-list p {
+  font-size: 1rem;
+  color: #cde9f4;
+}
+
+/* About paragraphs with subtle shimmer effect */
+.about p {
+  font-size: 1.1rem;
+  color: #021016;
+  line-height: 1.5;
+  position: relative;
+  background: linear-gradient(90deg, #b3e5fc 25%, #e0f7fa 50%, #b3e5fc 75%);
+  background-size: 200% 100%;
+  animation: shimmer 4s linear infinite;
+  user-select: text;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Button shadow animations */
+.logout-btn {
+  border: none;
+  outline: none;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 7px #00bcd4;
+  transition: box-shadow 0.2s ease;
+  background: rgba(40,40,40,0.7);
+}
+
+.logout-btn:active {
+  box-shadow: 0 0 15px #00e5ff inset;
+}
+
+/* Scrollbar styling for dark theme */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0e1826;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00bcd4;
+  border-radius: 6px;
+  box-shadow: inset 0 0 6px #00e5ff;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00e5ff;
+}
+
+/* Responsive Design for Tablets and Mobile */
+@media (max-width: 768px) {
+  body {
+    background-size: 300% 300%;
+  }
+
+  .waterzone h1 {
+    font-size: 2rem;
+  }
+  
+  nav {
+    padding: 8px 0;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: center;
+  }
+
+  .nav-links li a,
+  .logout-btn {
+    padding: 10px 15px;
+    font-size: 1rem;
+  }
+
+  main {
+    padding: 1.5rem 2rem;
+    margin: 1rem;
+  }
+
+  main h1 {
+    font-size: 2rem;
+  }
+
+  main p {
+    font-size: 1rem;
+  }
+
+  section.featured, section.about {
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  section h2 {
+    font-size: 1.5rem;
+  }
+
+  .feature-list li {
+    padding-left: 10px;
+  }
+
+  .feature-list h3 {
+    font-size: 1.1rem;
+  }
+
+  .feature-list p {
+    font-size: 0.9rem;
+  }
+
+  .about p {
+    font-size: 1rem;
+  }
+}
+
+/* Responsive for very small/mobile */
+@media (max-width: 400px) {
+  .waterzone h1 {
+    font-size: 1.5rem;
+  }
+
+  .nav-links li a,
+  .logout-btn {
+    font-size: 0.9rem;
+    padding: 8px 10px;
+  }
+
+  main h1 {
+    font-size: 1.5rem;
+  }
+
+  main p,
+  .about p {
+    font-size: 0.9rem;
+  }
+
+  section h2 {
+    font-size: 1.25rem;
+  }
+}

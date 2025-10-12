@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <link rel="stylesheet" href="/stylesheets/list.css">
+
+</head>
+<body>
+    <h2>Your Water Intake List</h2>
+<table border="1" cellpadding="5" cellspacing="0">
+  <tr>
+    <th>Date</th>
+    <th>Quantity (L)</th>
+    <th>Added At</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  <% intakes.forEach(intake => { %>
+    <tr>
+      <td><%= intake.date %></td>
+      <td><%= intake.quantity %></td>
+      <td><%= new Date(intake.addedAt).toLocaleString() %></td>
+      <td><a href="/intake/<%= intake._id %>/edit">Edit</a></td>
+      <td>
+        <form action="/intake/<%= intake._id %>/delete" method="post" onsubmit="return confirm('Are you sure you want to delete this entry?');">
+          <button type="submit">Delete</button>
+        </form>
+      </td>
+    </tr>
+  <% }) %>
+</table>
+
+<!-- Pagination controls -->
+<div style="margin-top:20px;">
+  <% for(let p=1; p<=totalPages; p++) { %>
+    <% if (p === page) { %>
+      <strong><%= p %></strong>
+    <% } else { %>
+      <a href="/intake/list?page=<%= p %>"><%= p %></a>
+    <% } %>
+  <% } %>
+</div>
+
+
+</body>
+</html>

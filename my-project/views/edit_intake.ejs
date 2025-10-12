@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="/stylesheets/edit.css">
+
+</head>
+<body>
+    <h2>Edit Intake for <%= intake.date %></h2><br><br>
+
+<form action="/intake/<%= intake._id %>/edit" method="post">
+  <label>Quantity (L):</label>
+  <input type="number" step="0.01" name="quantity" value="<%= intake.quantity %>" required>
+  <button type="submit">Update</button>
+</form>
+<br>
+<br>
+
+<a href="/intake/list">Back</a>
+
+</body>
+</html>

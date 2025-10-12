@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title><% title = 'Signup' %></title>
+    <link rel="stylesheet" href="/stylesheets/signup.css">
+
+</head>
+<body>
+  <header>
+    <div class="bikezone">
+      <h1>💧 Daily Water Intake Tracker</h1>
+    </div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/login">Login</a>
+    </nav>
+  </header>
+
+  <h1>Signup</h1>
+
+  <% if (message) { %>
+    <div style="color: red;">
+      <ul>
+        <li><%= message %></li>
+      </ul>
+    </div>
+  <% } %>
+
+  <% if (error) { %>
+    <div style="color: red;">
+      <ul>
+        <% Object.values(error).forEach(err => { %>
+          <li><%= err.message %></li>
+        <% }); %>
+      </ul>
+    </div>
+  <% } %>
+
+  <form action="/signup" method="post">
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email" autocomplete="email" />
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" autocomplete="new-password" />
+
+    <label for="confirmPassword">Confirm Password:</label>
+    <input type="password" id="confirmPassword" name="confirmPassword" autocomplete="new-password" />
+
+    <button type="submit">Sign Up</button>
+  </form>
+</body>
+</html>

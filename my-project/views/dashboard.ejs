@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <link rel="stylesheet" href="/stylesheets/dashboard.css">
+
+</head>
+<body>
+    <h2>Dashboard</h2>
+
+<!-- Add intake form -->
+<form action="/intake/add" method="post">
+  <label>Water Intake (L):</label>
+  <input type="number" step="0.01" name="quantity" required>
+  <button type="submit">Add Today's Intake</button>
+</form>
+
+<!-- Intake difference form -->
+<form action="/intake/difference" method="post" style="margin-top:25px;">
+  <label>From:</label>
+  <input type="date" name="from" required>
+  <label>To:</label>
+  <input type="date" name="to" required>
+  <button type="submit">Calculate Intake difference</button>
+</form>
+
+<div style="margin-top:20px;">
+  <a href="/intake/list">View Intake History</a> |
+</div>
+
+<% if (error) { %>
+  <p style="color:red;"><%= error %></p>
+<% } %>
+<% if (message) { %>
+  <p style="color:green;"><%= message %></p>
+<% } %>
+
+</body>
+</html>

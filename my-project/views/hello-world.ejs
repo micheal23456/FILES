@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+  <header>
+    <div class="waterzone">
+      <h1>💧 Daily Water Intake Tracker</h1>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="/signup">Sign Up</a></li>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/intake/add">Add Intake</a></li>
+        <li><a href="/intake/list">Intake List</a></li>
+        <% if (email) { %>
+          <li>
+            <form action="/logout" style="display:inline;">
+              <button type="submit" class="logout-btn">Logout</button>
+            </form>
+          </li>
+        <% } %>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Welcome to Your Daily Water Intake Tracker</h1>
+    <p>
+      This web app is designed to help you log and monitor your daily water intake.
+      By tracking your hydration habits, you can work toward a healthier, more balanced lifestyle.
+      Sign up and start keeping your body refreshed and energized!
+    </p>
+
+    <section class="featured">
+      <h2>Key Features</h2>
+      <ul class="feature-list">
+        <li>
+          <h3>Simple Daily Logging</h3>
+          <p>Easily add your water intake once per day. Stay consistent and never forget your hydration goals.</p>
+        </li>
+        <li>
+          <h3>History & Insights</h3>
+          <p>View your daily intake history in a paginated list. Edit or delete entries if needed.</p>
+        </li>
+        <li>
+          <h3>Track Progress</h3>
+          <p>Calculate the difference in intake between two dates, spot trends, and improve your routines.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="about">
+      <h2>Why Track Your Water Intake?</h2>
+      <p>Proper hydration supports overall health, energy, and focus.
+      Use this tracker to build positive habits, celebrate your consistency, and stay accountable.</p>
+      <p>Join today and start your journey toward a healthier, more hydrated you!</p>
+    </section>
+  </main>
+</body>
+</html>
